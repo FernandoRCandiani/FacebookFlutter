@@ -1,4 +1,6 @@
+import 'package:facebook/componentes/area_criar_postagem.dart';
 import 'package:facebook/componentes/botao_circulo.dart';
+import 'package:facebook/dados/dados.dart';
 import 'package:facebook/uteis/paleta_cores.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
@@ -43,11 +45,15 @@ class _HomeState extends State<Home> {
             ],
           ),
           SliverToBoxAdapter(
-            child: Container(
-              color: Colors.green,
-              height: 600,
-            ),
+            child: AreaCriarPostagem(usuario: usuarioAtual),
           ),
+          const SliverToBoxAdapter(
+              // child:
+              // Container(
+              //   color: Colors.green,
+              //   height: 600,
+              // ),
+              ),
         ],
       ),
     );
