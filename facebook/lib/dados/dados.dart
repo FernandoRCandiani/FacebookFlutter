@@ -52,7 +52,7 @@ List<Usuario> usuariosOnline = [
 ];
 
 
-/*
+
 /* Lista de estórias */
 List<Estoria> estorias = [
   Estoria(
@@ -91,6 +91,7 @@ List<Estoria> estorias = [
   ),
 ];
 
+/*
 /* Lista de postagens */
 List<Postagem> postagens = [
   Postagem(
