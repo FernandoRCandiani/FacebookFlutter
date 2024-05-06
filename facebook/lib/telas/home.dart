@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key});
+  const Home({key});
 
   @override
   State<Home> createState() => _HomeState();

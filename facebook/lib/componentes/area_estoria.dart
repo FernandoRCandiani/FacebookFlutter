@@ -10,7 +10,7 @@ class AreaStoria extends StatelessWidget {
   final List<Estoria> estorias;
 
   const AreaStoria({
-    super.key,
+    key,
     required this.usuario,
     required this.estorias,
   });
@@ -56,7 +56,7 @@ class CartaoEstoria extends StatelessWidget {
   final Estoria estoria;
   final bool adicionarEstoria;
   const CartaoEstoria({
-    super.key,
+    key,
     required this.estoria,
     this.adicionarEstoria = false,
   });

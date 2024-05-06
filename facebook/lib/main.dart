@@ -1,11 +1,12 @@
 import 'package:facebook/telas/home.dart';
+import 'package:facebook/uteis/paleta_cores.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-      title: 'Facebook',
-      debugShowCheckedModeBanner: false,
-      home: Home(),
-    ));
+  runApp(MaterialApp(
+    title: 'Facebook',
+    debugShowCheckedModeBanner: false,
+    theme: ThemeData(scaffoldBackgroundColor: PaletaCores.scaffold),
+    home: const Home(),
+  ));
 }
-

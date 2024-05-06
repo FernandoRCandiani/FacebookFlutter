@@ -5,7 +5,7 @@ class BotaoCircular extends StatelessWidget {
   final double iconeTamanho;
   final VoidCallback onPressed;
   const BotaoCircular({
-    super.key,
+    key,
     required this.icone,
     required this.iconeTamanho,
     required this.onPressed,

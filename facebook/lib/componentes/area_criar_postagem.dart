@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class AreaCriarPostagem extends StatelessWidget {
   final Usuario usuario;
 
-  const AreaCriarPostagem({super.key, required this.usuario});
+  const AreaCriarPostagem({key, required this.usuario});
 
   @override
   Widget build(BuildContext context) {

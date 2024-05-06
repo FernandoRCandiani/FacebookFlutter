@@ -7,7 +7,7 @@ class ImagemPerfil extends StatelessWidget {
   final bool foiVisualizado;
 
   const ImagemPerfil({
-    super.key,
+    key,
     required this.urlImagem,
     this.foiVisualizado = false,
   });
