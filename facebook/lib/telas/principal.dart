@@ -1,5 +1,6 @@
 import 'package:facebook/componentes/navegacao_abas.dart';
 import 'package:facebook/telas/home.dart';
+import 'package:facebook/uteis/responsivo.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -33,18 +34,22 @@ class _PrincipalState extends State<Principal> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDesktop = Responsivo.isDesktop(context);
+
     return DefaultTabController(
       length: _icones.length,
       child: Scaffold(
         body: TabBarView(children: _telas),
-        bottomNavigationBar: NavegacaoAbas(
-            icones: _icones,
-            indiceAbaSelecionada: _indiceAbaSelecionada,
-            onTap: (indice) {
-              setState(() {
-                _indiceAbaSelecionada = indice;
-              });
-            }),
+        bottomNavigationBar: isDesktop
+            ? null
+            : NavegacaoAbas(
+                icones: _icones,
+                indiceAbaSelecionada: _indiceAbaSelecionada,
+                onTap: (indice) {
+                  setState(() {
+                    _indiceAbaSelecionada = indice;
+                  });
+                }),
       ),
     );
   }
