@@ -1,6 +1,5 @@
 import 'package:facebook/uteis/paleta_cores.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class NavegacaoAbas extends StatefulWidget {
   final List<IconData> icones;
@@ -25,6 +24,7 @@ class _NavegacaoAbasState extends State<NavegacaoAbas> {
   Widget build(BuildContext context) {
     return TabBar(
       onTap: widget.onTap,
+      dividerColor: Colors.white,
       indicator: BoxDecoration(
         border: widget.indicadorEmbaixo!
             ? const Border(

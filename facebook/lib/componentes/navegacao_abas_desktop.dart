@@ -1,7 +1,6 @@
 import 'package:facebook/componentes/botao_circulo.dart';
 import 'package:facebook/componentes/botao_imagem_perfil.dart';
 import 'package:facebook/componentes/navegacao_abas.dart';
-import 'package:facebook/dados/dados.dart';
 import 'package:facebook/modelos/modelos.dart';
 import 'package:facebook/uteis/paleta_cores.dart';
 import 'package:flutter/material.dart';
