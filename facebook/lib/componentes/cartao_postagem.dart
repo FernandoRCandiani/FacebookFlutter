@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook/componentes/imagem_perfil.dart';
 import 'package:facebook/modelos/modelos.dart';
 import 'package:facebook/uteis/paleta_cores.dart';
+import 'package:facebook/uteis/responsivo.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -11,34 +12,47 @@ class CartaoPostagem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      margin: const EdgeInsets.symmetric(vertical: 8),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CabecalhoPostagem(postagem: postagem),
-                Text(postagem.descricao),
-              ],
+    bool isDesktop = Responsivo.isDesktop(context);
+    return Card(
+      margin: EdgeInsets.symmetric(
+        vertical: 8,
+        horizontal: isDesktop ? 0 : 5,
+      ),
+      elevation: isDesktop ? 0 : 1,
+      shape: isDesktop
+          ? null
+          : RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
-          ),
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8),
+        color: Colors.white,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CabecalhoPostagem(postagem: postagem),
+                  Text(postagem.descricao),
+                ],
+              ),
+            ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: CachedNetworkImage(
-              imageUrl: postagem.urlImagem,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: CachedNetworkImage(
+                imageUrl: postagem.urlImagem,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: EstatisticasPostagem(postagem: postagem),
-          ),
-          // Text(postagem.descricao),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: EstatisticasPostagem(postagem: postagem),
+            ),
+            // Text(postagem.descricao),
+          ],
+        ),
       ),
     );
   }
@@ -48,7 +62,7 @@ class CabecalhoPostagem extends StatelessWidget {
   final Postagem postagem;
 
   const CabecalhoPostagem({
-    Key? key,
+    super.key,
     required this.postagem,
   });
 

@@ -3,23 +3,24 @@ import 'package:facebook/componentes/imagem_perfil.dart';
 import 'package:facebook/dados/dados.dart';
 import 'package:facebook/modelos/modelos.dart';
 import 'package:facebook/uteis/paleta_cores.dart';
+import 'package:facebook/uteis/responsivo.dart';
 import 'package:flutter/material.dart';
 
 class AreaStoria extends StatelessWidget {
   final Usuario usuario;
   final List<Estoria> estorias;
 
-  const AreaStoria({
-    key,
+  const AreaStoria({super.key, 
     required this.usuario,
     required this.estorias,
   });
 
   @override
   Widget build(BuildContext context) {
+    bool isDesktop = Responsivo.isDesktop(context);
     return Container(
       height: 200,
-      color: Colors.white,
+      color: isDesktop ? Colors.transparent : Colors.white,
       child: ListView.builder(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
         scrollDirection: Axis.horizontal,
@@ -30,7 +31,7 @@ class AreaStoria extends StatelessWidget {
               usuario: usuarioAtual,
               urlImagem: usuarioAtual.urlImagem,
             );
-
+    
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4),
               child: CartaoEstoria(
@@ -39,9 +40,9 @@ class AreaStoria extends StatelessWidget {
               ),
             );
           }
-
+    
           Estoria estoria = estorias[indice - 1];
-
+    
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4),
             child: CartaoEstoria(estoria: estoria),
